@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1>This is the home page of {{ title_name }}'s project</h1>
+
+</head>
+<body>
+
+<form action="expression"> <!--form action means after submitting the form which url redirects -->
+    <!--by default method is get method,in case if you submit the data then u have to set the method is post -->
+    {% csrf_token %} <!--in post method it needs to csrf_token for security -->
+    1st Value:<input type="text" name="text1"> <br>
+    2nd Value:<input type="text" name="text2">
+    <input type="submit">
+</form>
+ <br>
+    <ul>
+        <li> <a href={{ link }}>Go to profile page</a> </li>  <!-- some comment cannot write in here like u r l key word -->
+        {% if user.is_authenticated %}
+        <li> <a href="app3/logout">Logout</a> </li>
+
+        {% else %}
+        <li> <a href="app3/login">Login</a> </li>
+        <li>  <a href="app2/signup">SignUp</a> </li>
+        {% endif %}
+    </ul>
+
+
+</body>
+</html>

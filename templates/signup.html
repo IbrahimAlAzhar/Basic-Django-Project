@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTRATION</title>
+</head>
+<body>
+    <form action="signup" method="POST"> <!--here form action means which views function works on here -->
+     {% csrf_token %}
+       User Name: <input type="text" name="username"> <br>
+       First Name: <input type="text" name="first_name"> <br>
+       Last Name: <input type="text" name="last_name"> <br>
+       Email- id: <input type="text" name="email_id"> <br>
+       Password: <input type="password" name="password"> <br>
+       <input type="submit">
+    </form>
+
+
+</body>
+</html>
